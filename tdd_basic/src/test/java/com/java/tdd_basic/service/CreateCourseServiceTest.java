@@ -2,6 +2,7 @@ package com.java.tdd_basic.service;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import com.java.tdd_basic.modules.course.repository.CourseInMemoryRepository;
 import org.junit.jupiter.api.Test;
 
 import com.java.tdd_basic.modules.course.entity.Course;
@@ -15,8 +16,8 @@ public class CreateCourseServiceTest {
 		course.setDescription("Course_Description_Test");
 		course.setName("Course_Name");
 		course.setWorkload(100);
-
-		CourseService createCourseService = new CourseService();
+		CourseInMemoryRepository repository = new CourseInMemoryRepository();
+		CourseService createCourseService = new CourseService(repository);
 		Course createdCourse = createCourseService.execute(course);
 		assertNotNull(createdCourse.getId());
 	}
