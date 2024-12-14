@@ -1,14 +1,15 @@
 package com.java.tdd_basic.modules.course.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 import com.java.tdd_basic.modules.course.entity.Course;
 
-public class CourseInMemory implements ICourseRepository {
+public class CourseInMemoryRepository implements ICourseRepository {
 
-	private List<Course> courses;
+	private ArrayList<Course> courses = new ArrayList<Course>();
 
 	@Override
 	public Course findByName(String name) {
