@@ -10,7 +10,7 @@ public class CourseService {
 	
 	private ICourseRepository repository;
 	
-	protected CourseService(ICourseRepository repository) {
+	public CourseService(ICourseRepository repository) {
 		super();
 		this.repository = repository;
 	}
